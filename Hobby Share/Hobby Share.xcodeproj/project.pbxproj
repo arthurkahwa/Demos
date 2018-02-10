@@ -15,6 +15,12 @@
 		8EA817AB202C8ADB0012D2FD /* Hobby_ShareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA817AA202C8ADB0012D2FD /* Hobby_ShareTests.swift */; };
 		8EA817B6202C8ADB0012D2FD /* Hobby_ShareUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA817B5202C8ADB0012D2FD /* Hobby_ShareUITests.swift */; };
 		8EA817C5202C8B640012D2FD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EA817C4202C8B640012D2FD /* MapKit.framework */; };
+		8EF881EF202F517B00534B7F /* SFLBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF881ED202F517A00534B7F /* SFLBaseModel.swift */; };
+		8EF881F0202F517B00534B7F /* SFLConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF881EE202F517B00534B7F /* SFLConnection.swift */; };
+		8EF881F2202F846400534B7F /* HobbyShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF881F1202F846400534B7F /* HobbyShareViewController.swift */; };
+		8EF881F4202F84D400534B7F /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF881F3202F84D400534B7F /* MeViewController.swift */; };
+		8EF881F8202F854B00534B7F /* EditHobbiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF881F7202F854B00534B7F /* EditHobbiesViewController.swift */; };
+		8EF881FA202F85A200534B7F /* NeighborsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF881F9202F85A200534B7F /* NeighborsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,12 @@
 		8EA817B5202C8ADB0012D2FD /* Hobby_ShareUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hobby_ShareUITests.swift; sourceTree = "<group>"; };
 		8EA817B7202C8ADB0012D2FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EA817C4202C8B640012D2FD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		8EF881ED202F517A00534B7F /* SFLBaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SFLBaseModel.swift; path = "../../../../projects_local/iOS Development For Creative Enterpreneurs/05 Toward the Future of iOS Development with Swift/week 04/StarterKit/SFLBaseModel.swift"; sourceTree = "<group>"; };
+		8EF881EE202F517B00534B7F /* SFLConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SFLConnection.swift; path = "../../../../projects_local/iOS Development For Creative Enterpreneurs/05 Toward the Future of iOS Development with Swift/week 04/StarterKit/SFLConnection.swift"; sourceTree = "<group>"; };
+		8EF881F1202F846400534B7F /* HobbyShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyShareViewController.swift; sourceTree = "<group>"; };
+		8EF881F3202F84D400534B7F /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
+		8EF881F7202F854B00534B7F /* EditHobbiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditHobbiesViewController.swift; sourceTree = "<group>"; };
+		8EF881F9202F85A200534B7F /* NeighborsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeighborsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,12 +113,18 @@
 		8EA81794202C8ADB0012D2FD /* Hobby Share */ = {
 			isa = PBXGroup;
 			children = (
+				8EF881ED202F517A00534B7F /* SFLBaseModel.swift */,
+				8EF881EE202F517B00534B7F /* SFLConnection.swift */,
 				8EA81795202C8ADB0012D2FD /* AppDelegate.swift */,
 				8EA81797202C8ADB0012D2FD /* ViewController.swift */,
 				8EA81799202C8ADB0012D2FD /* Main.storyboard */,
 				8EA8179C202C8ADB0012D2FD /* Assets.xcassets */,
 				8EA8179E202C8ADB0012D2FD /* LaunchScreen.storyboard */,
 				8EA817A1202C8ADB0012D2FD /* Info.plist */,
+				8EF881F1202F846400534B7F /* HobbyShareViewController.swift */,
+				8EF881F3202F84D400534B7F /* MeViewController.swift */,
+				8EF881F7202F854B00534B7F /* EditHobbiesViewController.swift */,
+				8EF881F9202F85A200534B7F /* NeighborsViewController.swift */,
 			);
 			path = "Hobby Share";
 			sourceTree = "<group>";
@@ -271,8 +289,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EF881FA202F85A200534B7F /* NeighborsViewController.swift in Sources */,
+				8EF881F4202F84D400534B7F /* MeViewController.swift in Sources */,
+				8EF881EF202F517B00534B7F /* SFLBaseModel.swift in Sources */,
 				8EA81798202C8ADB0012D2FD /* ViewController.swift in Sources */,
+				8EF881F8202F854B00534B7F /* EditHobbiesViewController.swift in Sources */,
 				8EA81796202C8ADB0012D2FD /* AppDelegate.swift in Sources */,
+				8EF881F0202F517B00534B7F /* SFLConnection.swift in Sources */,
+				8EF881F2202F846400534B7F /* HobbyShareViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
