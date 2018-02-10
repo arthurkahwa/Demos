@@ -7,9 +7,18 @@
 //
 
 import UIKit
+import MapKit
 
-class HobbyShareViewController: UIViewController {
+class HobbyShareViewController:
+    UIViewController,
+    CLLocationManagerDelegate,
+    UICollectionViewDelegate,
+    UICollectionViewDataSource,
+    UICollectionViewDelegateFlowLayout
+{
 
+    @IBOutlet weak var myHobbiesCollectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,5 +40,15 @@ class HobbyShareViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
+    // MARK: - UICollectionView Protocol
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return Int.max
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        return UICollectionViewCell()
+    }
+
 
 }

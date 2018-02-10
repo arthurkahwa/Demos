@@ -10,6 +10,10 @@ import UIKit
 
 class MeViewController: HobbyShareViewController {
 
+    @IBOutlet weak var userNameTextField: UITextField!
+    @IBOutlet weak var currentLatitudeLabel: UILabel!
+    @IBOutlet weak var currentLongitudeLabel: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

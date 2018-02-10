@@ -30,6 +30,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="523" id="FfO-ub-Lyh"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="Nm0-xT-fx7" id="Ifm-eR-sLU"/>
+                                </connections>
                             </mapView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="s0C-6o-LCH">
                                 <rect key="frame" x="16" y="570" width="343" height="48"/>
@@ -68,6 +71,10 @@
                                         <size key="customSize" width="100" height="50"/>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Nm0-xT-fx7" id="64I-OI-FOP"/>
+                                    <outlet property="delegate" destination="Nm0-xT-fx7" id="9Wl-YE-QfM"/>
+                                </connections>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jjH-kq-bWn">
                                 <rect key="frame" x="16" y="531" width="343" height="2"/>
@@ -92,6 +99,10 @@
                         <viewLayoutGuide key="safeArea" id="qRs-OZ-2gd"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Neighbors" image="neighbors" id="Iup-eD-mNN"/>
+                    <connections>
+                        <outlet property="myHobbiesCollectionView" destination="s0C-6o-LCH" id="B6u-bR-rTm"/>
+                        <outlet property="myNeighborsMapView" destination="KXa-Aq-xyA" id="f4T-2g-LbB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vLG-b5-RgD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -105,8 +116,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uQq-YU-pMS">
-                                <rect key="frame" x="16" y="534" width="343" height="48"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uQq-YU-pMS">
+                                <rect key="frame" x="16" y="535" width="343" height="48"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="q32-8N-95f">
                                     <size key="itemSize" width="50" height="50"/>
@@ -134,6 +145,10 @@
                                         <size key="customSize" width="100" height="50"/>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="GKi-xf-YO2" id="Tmp-Ol-LBk"/>
+                                    <outlet property="delegate" destination="GKi-xf-YO2" id="92Y-Rd-BFV"/>
+                                </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Latitude" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ThH-56-iLq">
                                 <rect key="frame" x="16" y="373" width="343" height="21"/>
@@ -224,6 +239,12 @@
                     <tabBarItem key="tabBarItem" title="Me" id="4nF-Ic-l2P"/>
                     <navigationItem key="navigationItem" title="Me" prompt="New Username? Sign Up. -  Existing Username? Sign In" id="Rr1-TL-tYD"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="currentLatitudeLabel" destination="ThH-56-iLq" id="OmH-qn-0Jm"/>
+                        <outlet property="currentLongitudeLabel" destination="FkY-Tn-Cwy" id="weK-qF-uZQ"/>
+                        <outlet property="myHobbiesCollectionView" destination="uQq-YU-pMS" id="abS-qO-cq5"/>
+                        <outlet property="userNameTextField" destination="cZ1-ob-8Cn" id="yHP-p7-qwe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s9V-7o-qp9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -279,6 +300,10 @@
                                         </label>
                                     </subviews>
                                 </collectionReusableView>
+                                <connections>
+                                    <outlet property="dataSource" destination="T5G-7x-YnS" id="yj5-dZ-pUM"/>
+                                    <outlet property="delegate" destination="T5G-7x-YnS" id="n7c-df-9AP"/>
+                                </connections>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="DX6-dq-IZy">
                                 <rect key="frame" x="16" y="560" width="343" height="48"/>
@@ -312,6 +337,10 @@
                                         <size key="customSize" width="100" height="50"/>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="T5G-7x-YnS" id="2gl-vn-UIi"/>
+                                    <outlet property="delegate" destination="T5G-7x-YnS" id="STs-w5-yHJ"/>
+                                </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Hobbies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uT2-si-8g5">
                                 <rect key="frame" x="129" y="501" width="92" height="21"/>
@@ -353,6 +382,11 @@
                         <viewLayoutGuide key="safeArea" id="pkp-bC-2T1"/>
                     </view>
                     <navigationItem key="navigationItem" title="Choose up to 3 hobbies" prompt="Scroll up and down. Tap to add." id="1OE-DA-sKm"/>
+                    <connections>
+                        <outlet property="availableHobbiesCollectionView" destination="cN6-lW-jjF" id="xzO-sO-Ley"/>
+                        <outlet property="availableHobbiesViewController" destination="cN6-lW-jjF" id="WlO-Df-4Ha"/>
+                        <outlet property="myHobbiesCollectionView" destination="DX6-dq-IZy" id="2pP-tv-j9X"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VG5-b5-aan" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

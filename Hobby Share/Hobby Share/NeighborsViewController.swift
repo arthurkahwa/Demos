@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import MapKit
 
 class NeighborsViewController: HobbyShareViewController {
+
+    @IBOutlet weak var myNeighborsMapView: MKMapView!
 
     override func viewDidLoad() {
         super.viewDidLoad()

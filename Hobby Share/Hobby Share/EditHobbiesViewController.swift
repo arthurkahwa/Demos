@@ -10,6 +10,10 @@ import UIKit
 
 class EditHobbiesViewController: HobbyShareViewController {
 
+
+    @IBOutlet weak var availableHobbiesCollectionView: UICollectionView!
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
