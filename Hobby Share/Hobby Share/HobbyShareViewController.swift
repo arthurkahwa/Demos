@@ -18,7 +18,34 @@ class HobbyShareViewController:
 {
 
     @IBOutlet weak var myHobbiesCollectionView: UICollectionView!
-    
+
+    let availableHobbies: [String: [Hobby]] = HobbyDataProvider.fetchHobbies()
+
+    var myHobies: [Hobby]? {
+        didSet {
+            self.myHobbiesCollectionView.reloadData()
+        }
+    }
+
+    let locationManager = CLLocationManager()
+    var currentLocation: CLLocation?
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        locationManager.delegate = self
+
+        if CLLocationManager.authorizationStatus() == .notDetermined {
+            locationManager.requestWhenInUseAuthorization()
+        }
+        else if CLLocationManager.authorizationStatus() == .authorizedAlways
+                ||
+                CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+            locationManager.stopUpdatingLocation()
+            locationManager.startUpdatingLocation()
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,7 +56,29 @@ class HobbyShareViewController:
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
+    // MARK: - Core Location
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedWhenInUse || status == .authorizedAlways {
+            manager.stopUpdatingLocation()
+            manager.startUpdatingLocation()
+        }
+    }
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        currentLocation = locations.last!
+
+        manager.stopUpdatingLocation()
+        // locationManager.startUpdatingLocation()
+    }
+
+    func locationManager(_ manager: CLLocationManager, didFinishDeferredUpdatesWithError error: Error?) {
+        print(error.debugDescription)
+    }
+
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error.localizedDescription)
+    }
 
     /*
     // MARK: - Navigation
@@ -43,12 +92,67 @@ class HobbyShareViewController:
 
     // MARK: - UICollectionView Protocol
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Int.max
+        if collectionView == myHobbiesCollectionView {
+            guard myHobies != nil else {
+                return 0
+            }
+            return myHobies!.count
+        }
+        else {
+            let key = Array(availableHobbies.keys)[section]
+
+            return availableHobbies[key]!.count
+        }
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        let cell: HobbyCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "HobbyCollectionViewCell", for: indexPath) as! HobbyCollectionViewCell
+
+        if collectionView == myHobbiesCollectionView {
+            let hobby = myHobies![indexPath.item]
+            cell.hobbyLabel.text = hobby.hobbyName
+        }
+        else {
+            let key = Array(availableHobbies.keys)[indexPath.section]
+            let hobbies = availableHobbies[key]
+            let hobby = hobbies![indexPath.item]
+            cell.hobbyLabel.text = hobby.hobbyName
+        }
+
+        return cell
     }
 
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        if collectionView == myHobbiesCollectionView {
+            return 1
+        }
+        else {
+            return availableHobbies.keys.count
+        }
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        var availableWidth: CGFloat!
+        let cellHeight: CGFloat = 54
+
+        var numberOfCells: Int!
+        var padding: Int!
+
+        if collectionView == myHobbiesCollectionView {
+            numberOfCells = collectionView.dataSource?.collectionView(collectionView, numberOfItemsInSection: indexPath.section)
+            padding = 10
+        }
+        else {
+            numberOfCells = 2
+            padding = 9
+        }
+
+        availableWidth = collectionView.frame.size.width - CGFloat(padding * (numberOfCells - 1))
+
+        let dynamicCellWidth = availableWidth / CGFloat(numberOfCells)
+        let dynamicCellSize = CGSize(width: dynamicCellWidth, height: cellHeight)
+
+        return dynamicCellSize
+    }
 
 }

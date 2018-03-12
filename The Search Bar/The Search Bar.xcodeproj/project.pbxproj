@@ -15,10 +15,13 @@
 		8EEE168E2037331500F87606 /* The_Search_BarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE168D2037331500F87606 /* The_Search_BarUITests.swift */; };
 		8EEE169C203733C000F87606 /* MainItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE169B203733C000F87606 /* MainItemsTableViewController.swift */; };
 		8EEE169E2037353500F87606 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE169D2037353500F87606 /* Item.swift */; };
-		8EEE16A02037382E00F87606 /* AdjectiveAndNouns.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8EEE169F2037382E00F87606 /* AdjectiveAndNouns.plist */; };
+		8EEE16A02037382E00F87606 /* AdjectivesAndNouns.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8EEE169F2037382E00F87606 /* AdjectivesAndNouns.plist */; };
 		8EEE16A220373D2C00F87606 /* nouns in Resources */ = {isa = PBXBuildFile; fileRef = 8EEE16A120373D2C00F87606 /* nouns */; };
 		8EEE16A420373D4C00F87606 /* adjectives in Resources */ = {isa = PBXBuildFile; fileRef = 8EEE16A320373D4C00F87606 /* adjectives */; };
 		8EEE16A620373E0300F87606 /* makeEntry.py in Resources */ = {isa = PBXBuildFile; fileRef = 8EEE16A520373E0300F87606 /* makeEntry.py */; };
+		8EEE16A8203774E800F87606 /* ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE16A7203774E800F87606 /* ItemStore.swift */; };
+		8EEE16AA203781E700F87606 /* ItemCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE16A9203781E700F87606 /* ItemCellTableViewCell.swift */; };
+		8EEE16AC20379FE300F87606 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE16AB20379FE300F87606 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,10 +56,13 @@
 		8EEE168F2037331500F87606 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EEE169B203733C000F87606 /* MainItemsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainItemsTableViewController.swift; sourceTree = "<group>"; };
 		8EEE169D2037353500F87606 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		8EEE169F2037382E00F87606 /* AdjectiveAndNouns.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AdjectiveAndNouns.plist; sourceTree = "<group>"; };
+		8EEE169F2037382E00F87606 /* AdjectivesAndNouns.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AdjectivesAndNouns.plist; sourceTree = "<group>"; };
 		8EEE16A120373D2C00F87606 /* nouns */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = nouns; sourceTree = "<group>"; };
 		8EEE16A320373D4C00F87606 /* adjectives */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = adjectives; sourceTree = "<group>"; };
 		8EEE16A520373E0300F87606 /* makeEntry.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = makeEntry.py; sourceTree = "<group>"; };
+		8EEE16A7203774E800F87606 /* ItemStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemStore.swift; sourceTree = "<group>"; };
+		8EEE16A9203781E700F87606 /* ItemCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCellTableViewCell.swift; sourceTree = "<group>"; };
+		8EEE16AB20379FE300F87606 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,8 +122,11 @@
 				8EEE16792037331500F87606 /* Info.plist */,
 				8EEE169B203733C000F87606 /* MainItemsTableViewController.swift */,
 				8EEE169D2037353500F87606 /* Item.swift */,
-				8EEE169F2037382E00F87606 /* AdjectiveAndNouns.plist */,
+				8EEE169F2037382E00F87606 /* AdjectivesAndNouns.plist */,
 				8EEE16A520373E0300F87606 /* makeEntry.py */,
+				8EEE16A7203774E800F87606 /* ItemStore.swift */,
+				8EEE16A9203781E700F87606 /* ItemCellTableViewCell.swift */,
+				8EEE16AB20379FE300F87606 /* DetailViewController.swift */,
 			);
 			path = "The Search Bar";
 			sourceTree = "<group>";
@@ -252,7 +261,7 @@
 				8EEE16782037331500F87606 /* LaunchScreen.storyboard in Resources */,
 				8EEE16752037331500F87606 /* Assets.xcassets in Resources */,
 				8EEE16A620373E0300F87606 /* makeEntry.py in Resources */,
-				8EEE16A02037382E00F87606 /* AdjectiveAndNouns.plist in Resources */,
+				8EEE16A02037382E00F87606 /* AdjectivesAndNouns.plist in Resources */,
 				8EEE16732037331500F87606 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,6 +289,9 @@
 			files = (
 				8EEE166E2037331500F87606 /* AppDelegate.swift in Sources */,
 				8EEE169E2037353500F87606 /* Item.swift in Sources */,
+				8EEE16AA203781E700F87606 /* ItemCellTableViewCell.swift in Sources */,
+				8EEE16AC20379FE300F87606 /* DetailViewController.swift in Sources */,
+				8EEE16A8203774E800F87606 /* ItemStore.swift in Sources */,
 				8EEE169C203733C000F87606 /* MainItemsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
