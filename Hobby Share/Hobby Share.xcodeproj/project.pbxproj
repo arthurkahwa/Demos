@@ -13,6 +13,7 @@
 		8E4B816B205305D600CF34A4 /* UserDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B816A205305D600CF34A4 /* UserDataProvider.swift */; };
 		8E4B816D2053060100CF34A4 /* HobbyDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B816C2053060100CF34A4 /* HobbyDataProvider.swift */; };
 		8E841BE82056E9FC00FBDE02 /* HobbyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E841BE72056E9FC00FBDE02 /* HobbyCollectionViewCell.swift */; };
+		8E841BEA205729F700FBDE02 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E841BE9205729F700FBDE02 /* Constants.swift */; };
 		8EA81796202C8ADB0012D2FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA81795202C8ADB0012D2FD /* AppDelegate.swift */; };
 		8EA81798202C8ADB0012D2FD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA81797202C8ADB0012D2FD /* ViewController.swift */; };
 		8EA8179B202C8ADB0012D2FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EA81799202C8ADB0012D2FD /* Main.storyboard */; };
@@ -53,6 +54,7 @@
 		8E4B816A205305D600CF34A4 /* UserDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataProvider.swift; sourceTree = "<group>"; };
 		8E4B816C2053060100CF34A4 /* HobbyDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyDataProvider.swift; sourceTree = "<group>"; };
 		8E841BE72056E9FC00FBDE02 /* HobbyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyCollectionViewCell.swift; sourceTree = "<group>"; };
+		8E841BE9205729F700FBDE02 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8EA81792202C8ADB0012D2FD /* Hobby Share.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hobby Share.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EA81795202C8ADB0012D2FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EA81797202C8ADB0012D2FD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				8E4B816A205305D600CF34A4 /* UserDataProvider.swift */,
 				8E4B816C2053060100CF34A4 /* HobbyDataProvider.swift */,
 				8EF881F3202F84D400534B7F /* MeViewController.swift */,
+				8E841BE9205729F700FBDE02 /* Constants.swift */,
 				8EF881F7202F854B00534B7F /* EditHobbiesViewController.swift */,
 				8EF881F9202F85A200534B7F /* NeighborsViewController.swift */,
 			);
@@ -312,6 +315,7 @@
 				8EF881F4202F84D400534B7F /* MeViewController.swift in Sources */,
 				8EF881EF202F517B00534B7F /* SFLBaseModel.swift in Sources */,
 				8E4B81652051D88200CF34A4 /* Hobby.swift in Sources */,
+				8E841BEA205729F700FBDE02 /* Constants.swift in Sources */,
 				8E841BE82056E9FC00FBDE02 /* HobbyCollectionViewCell.swift in Sources */,
 				8E4B81692051D90F00CF34A4 /* ListOfUsers.swift in Sources */,
 				8EA81798202C8ADB0012D2FD /* ViewController.swift in Sources */,
@@ -489,6 +493,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7X8WVYDFHZ;
 				INFOPLIST_FILE = "Hobby Share/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.chapter.softwaremill.Hobby-Share";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -504,6 +509,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7X8WVYDFHZ;
 				INFOPLIST_FILE = "Hobby Share/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.chapter.softwaremill.Hobby-Share";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -237,7 +237,13 @@
                         <viewLayoutGuide key="safeArea" id="8QZ-Lw-rcg"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Me" id="4nF-Ic-l2P"/>
-                    <navigationItem key="navigationItem" title="Me" prompt="New Username? Sign Up. -  Existing Username? Sign In" id="Rr1-TL-tYD"/>
+                    <navigationItem key="navigationItem" title="Me" prompt="New Username? Sign Up. -  Existing Username? Sign In" id="Rr1-TL-tYD">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="VLc-bF-lud">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="GKi-xf-YO2" id="6Wc-2x-9oi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="currentLatitudeLabel" destination="ThH-56-iLq" id="OmH-qn-0Jm"/>

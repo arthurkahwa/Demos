@@ -8,6 +8,6 @@
 
 import UIKit
 
-class ListOfUsers: SFLBaseModel {
+class ListOfUsers: SFLBaseModel, JSONSerializable {
 
 }

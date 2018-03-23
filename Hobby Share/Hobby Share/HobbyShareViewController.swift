@@ -19,16 +19,25 @@ class HobbyShareViewController:
 
     @IBOutlet weak var myHobbiesCollectionView: UICollectionView!
 
-    let availableHobbies: [String: [Hobby]] = HobbyDataProvider.fetchHobbies()
+    let availableHobbies: [String: [Hobby]] = HobbyDataProvider().fetchHobbies()
+    let locationManager = CLLocationManager()
+    var currentLocation: CLLocation?
 
     var myHobies: [Hobby]? {
         didSet {
             self.myHobbiesCollectionView.reloadData()
+
+            self.saveHobbiesToUserDefaulta()
         }
     }
 
-    let locationManager = CLLocationManager()
-    var currentLocation: CLLocation?
+    func saveHobbiesToUserDefaulta() {
+        let hobbyData = NSKeyedArchiver.archivedData(withRootObject: myHobies!)
+
+        UserDefaults.standard.set(hobbyData, forKey:"MyHobbies")
+        UserDefaults.standard.synchronize()
+    }
+
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -153,6 +162,16 @@ class HobbyShareViewController:
         let dynamicCellSize = CGSize(width: dynamicCellWidth, height: cellHeight)
 
         return dynamicCellSize
+    }
+
+    // MARK: - Other
+    func showError(message: String) {
+        let alert = UIAlertController(title: kAppTitle, message: message, preferredStyle: .alert)
+        let okayAction = UIAlertAction(title: "Dismiss", style: .default, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+        })
+        alert.addAction(okayAction)
+        self.present(alert, animated: true, completion: nil)
     }
 
 }
