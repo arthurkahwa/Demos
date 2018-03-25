@@ -23,21 +23,20 @@ class HobbyShareViewController:
     let locationManager = CLLocationManager()
     var currentLocation: CLLocation?
 
-    var myHobies: [Hobby]? {
+    var myHobbies: [Hobby]? {
         didSet {
             self.myHobbiesCollectionView.reloadData()
 
-            self.saveHobbiesToUserDefaulta()
+            self.saveHobbiesToUserDefaults()
         }
     }
 
-    func saveHobbiesToUserDefaulta() {
-        let hobbyData = NSKeyedArchiver.archivedData(withRootObject: myHobies!)
+    func saveHobbiesToUserDefaults() {
+        let hobbyData = NSKeyedArchiver.archivedData(withRootObject: myHobbies!)
 
         UserDefaults.standard.set(hobbyData, forKey:"MyHobbies")
         UserDefaults.standard.synchronize()
     }
-
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -102,10 +101,10 @@ class HobbyShareViewController:
     // MARK: - UICollectionView Protocol
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == myHobbiesCollectionView {
-            guard myHobies != nil else {
+            guard myHobbies != nil else {
                 return 0
             }
-            return myHobies!.count
+            return myHobbies!.count
         }
         else {
             let key = Array(availableHobbies.keys)[section]
@@ -118,7 +117,7 @@ class HobbyShareViewController:
         let cell: HobbyCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "HobbyCollectionViewCell", for: indexPath) as! HobbyCollectionViewCell
 
         if collectionView == myHobbiesCollectionView {
-            let hobby = myHobies![indexPath.item]
+            let hobby = myHobbies![indexPath.item]
             cell.hobbyLabel.text = hobby.hobbyName
         }
         else {
@@ -128,6 +127,7 @@ class HobbyShareViewController:
             cell.hobbyLabel.text = hobby.hobbyName
         }
 
+        cell.backgroundColor = UIColor.darkGray
         return cell
     }
 

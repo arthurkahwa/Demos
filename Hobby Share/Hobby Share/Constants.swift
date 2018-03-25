@@ -9,3 +9,6 @@
 import Foundation
 
 let kAppTitle = "Hobby Share"
+let kMaxHobbyCount = 3
+let serverPath = "http://uci.smilefish.com/HBSRest-Dev/api/"
+let endPoint = "HobbyRest"

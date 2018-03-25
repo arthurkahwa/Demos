@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E3BAE1D2067E67A00150371 /* HobbiesCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3BAE1C2067E67A00150371 /* HobbiesCollectionViewHeader.swift */; };
 		8E4B81652051D88200CF34A4 /* Hobby.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B81642051D88200CF34A4 /* Hobby.swift */; };
 		8E4B81672051D8E000CF34A4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B81662051D8E000CF34A4 /* User.swift */; };
 		8E4B81692051D90F00CF34A4 /* ListOfUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B81682051D90F00CF34A4 /* ListOfUsers.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8E3BAE1C2067E67A00150371 /* HobbiesCollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbiesCollectionViewHeader.swift; sourceTree = "<group>"; };
 		8E4B81642051D88200CF34A4 /* Hobby.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hobby.swift; sourceTree = "<group>"; };
 		8E4B81662051D8E000CF34A4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8E4B81682051D90F00CF34A4 /* ListOfUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfUsers.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				8EF881F3202F84D400534B7F /* MeViewController.swift */,
 				8E841BE9205729F700FBDE02 /* Constants.swift */,
 				8EF881F7202F854B00534B7F /* EditHobbiesViewController.swift */,
+				8E3BAE1C2067E67A00150371 /* HobbiesCollectionViewHeader.swift */,
 				8EF881F9202F85A200534B7F /* NeighborsViewController.swift */,
 			);
 			path = "Hobby Share";
@@ -318,6 +321,7 @@
 				8E841BEA205729F700FBDE02 /* Constants.swift in Sources */,
 				8E841BE82056E9FC00FBDE02 /* HobbyCollectionViewCell.swift in Sources */,
 				8E4B81692051D90F00CF34A4 /* ListOfUsers.swift in Sources */,
+				8E3BAE1D2067E67A00150371 /* HobbiesCollectionViewHeader.swift in Sources */,
 				8EA81798202C8ADB0012D2FD /* ViewController.swift in Sources */,
 				8EF881F8202F854B00534B7F /* EditHobbiesViewController.swift in Sources */,
 				8EA81796202C8ADB0012D2FD /* AppDelegate.swift in Sources */,

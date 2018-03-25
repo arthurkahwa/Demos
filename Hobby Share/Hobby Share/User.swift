@@ -57,6 +57,7 @@ class User: SFLBaseModel, JSONSerializable {
             dict.setValue(self.searchHobby?.hobbyName, forKey: "HobbySearch")
         }
 
+        print(String(describing: dict))
         return dict
     }
 

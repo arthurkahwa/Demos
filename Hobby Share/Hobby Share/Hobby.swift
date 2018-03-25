@@ -10,7 +10,7 @@ import Foundation
 
 class Hobby: SFLBaseModel, NSCoding {
     func encode(with aCoder: NSCoder) {
-        aCoder.encodeConditionalObject(self.hobbyName, forKey: "HobbyName")
+        aCoder.encode(self.hobbyName, forKey: "HobbyName")
     }
 
     required init?(coder aDecoder: NSCoder) {

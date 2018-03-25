@@ -9,5 +9,18 @@
 import Foundation
 
 class UserDataProvider: NSObject {
+    func getAccountForUser(user: User, completion: @escaping (User) -> ()) {
+        let requestUrlString = serverPath + endPoint
+        let httpMethod = "CREATE_USER"
+        let requestModel = user
 
+        SFLConnection().ajax(url: requestUrlString as NSString, verb: httpMethod as NSString, requestBody: requestModel)  {
+            (returnedJSONDict) in
+            let dict = NSDictionary(dictionary: returnedJSONDict)
+            let returnedUser = User()
+            returnedUser.readFromJSONDictionary(dict: dict)
+
+            completion(returnedUser)
+            }
+    }
 }

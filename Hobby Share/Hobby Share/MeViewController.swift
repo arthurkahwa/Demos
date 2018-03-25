@@ -70,15 +70,15 @@ class MeViewController: HobbyShareViewController,
         requestUser.latitude = currentLocation?.coordinate.latitude
         requestUser.longitude = currentLocation?.coordinate.longitude
 
-        UserDataProvider().getAccountForUser(requestUser) { (returnedUser) in
+        UserDataProvider().getAccountForUser(user: requestUser) { (returnedUser) in
             if returnedUser.status.code == 0 {
-                self.myHobies = returnedUser.hobbies
+                self.myHobbies = returnedUser.hobbies
 
                 UserDefaults.standard.set(returnedUser.userId, forKey: "CurrentUserId")
                 UserDefaults.standard.synchronize()
             }
             else {
-                self.showError(returnedUser.status.statusDescription!)
+                self.showError(message: returnedUser.status.statusDescription!)
             }
         }
     }

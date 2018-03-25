@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        if UserDefaults.standard.object(forKey: "MyHobbies") == nil {
+        if UserDefaults.standard.value(forKey: "MyHobbies") == nil {
             let myHobbies = [Hobby(hobbyName:"Video Games"), Hobby(hobbyName:"Apple"), Hobby(hobbyName:"Technology")]
             let hobbyData = NSKeyedArchiver.archivedData(withRootObject: myHobbies)
             UserDefaults.standard.register(defaults: ["MyHobbies": hobbyData])
@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
 
-        if UserDefaults.standard.object(forKey: "CurrentUserId") == nil {
+        if UserDefaults.standard.value(forKey: "CurrentUserId") == nil {
             UserDefaults.standard.register(defaults: ["CurrentUserId": ""])
             UserDefaults.standard.synchronize()
         }
