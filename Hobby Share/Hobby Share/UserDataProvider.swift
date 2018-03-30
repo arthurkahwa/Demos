@@ -23,4 +23,20 @@ class UserDataProvider: NSObject {
             completion(returnedUser)
             }
     }
+
+    func fetchUserForHobby(user: User, hobby: Hobby, completion: @escaping (ListOfUsers) -> ()) {
+        let requestUrlString = serverPath + endPoint
+        let httpMethod = "FETCH_USERS_WITH_HOBBY"
+        let requestModel = user
+
+        requestModel.searchHobby = hobby
+
+        SFLConnection().ajax(url: requestUrlString as NSString, verb: httpMethod as NSString, requestBody: requestModel) { (returnedJSONDictionary) in
+            let dictionary = NSDictionary(dictionary: returnedJSONDictionary)
+            let returnedListOfUsers = ListOfUsers()
+            returnedListOfUsers.readFromJSONDictionary(dict: dictionary)
+
+            completion(returnedListOfUsers)
+        }
+    }
 }

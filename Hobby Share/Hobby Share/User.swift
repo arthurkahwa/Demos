@@ -7,8 +7,40 @@
 //
 
 import Foundation
+import MapKit
 
-class User: SFLBaseModel, JSONSerializable {
+extension Array {
+    var allVariablesAreObjects: Bool {
+        var retVal = true
+
+        for value in self {
+            retVal = value is Hobby
+        }
+
+        return retVal
+    }
+
+    func toString() -> String {
+        var retVal = ""
+
+        if allVariablesAreObjects == false {
+            for j in 0...self.count - 1 {
+                let value = self[j] as! Hobby
+
+                if j == 0 {
+                    retVal +=  value.hobbyName!
+                }
+                else {
+                    retVal += ", " + value.hobbyName!
+                }
+            }
+        }
+
+        return retVal
+    }
+}
+
+class User: SFLBaseModel, JSONSerializable, MKAnnotation {
     var userId: String?
     var userName: String?
     var latitude: Double?
@@ -26,6 +58,14 @@ class User: SFLBaseModel, JSONSerializable {
         super.init()
         self.delegate = self
         self.userName = userName
+    }
+
+    convenience init(userName: String, hobbies: [Hobby], latitude: Double, longitude: Double) {
+        self.init(userName: userName)
+
+        self.hobbies = hobbies
+        self.latitude = latitude
+        self.longitude = longitude
     }
 
     override func getJSONDictionary() -> NSDictionary {
@@ -74,4 +114,32 @@ class User: SFLBaseModel, JSONSerializable {
             self.hobbies = Hobby.deserializeHobbies(hobbies: hobbies)
         }
     }
+
+    // MARK: - MKAnnotation
+    var coordinate: CLLocationCoordinate2D {
+        get {
+            return CLLocationCoordinate2D(latitude: self.latitude!, longitude: self.longitude!)
+        }
+    }
+
+    var title: String? {
+        get {
+            return self.userName
+        }
+    }
+
+    var subtitle: String? {
+        get {
+            var hobbiesAsString = ""
+            for hobby in hobbies {
+                hobbiesAsString += hobby.hobbyName! + " "
+            }
+            print(self.userName! + " " + hobbiesAsString)
+
+            return hobbiesAsString
+        }
+    }
+
+
+
 }

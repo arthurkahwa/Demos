@@ -94,6 +94,8 @@ class EditHobbiesViewController: HobbyShareViewController {
         }
     }
 
+    // MARK: - Other
+    
     /*
     // MARK: - Navigation
 

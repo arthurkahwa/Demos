@@ -52,6 +52,8 @@ class HobbyShareViewController:
             locationManager.stopUpdatingLocation()
             locationManager.startUpdatingLocation()
         }
+
+        getHobbies()
     }
 
     override func viewDidLoad() {
@@ -116,6 +118,8 @@ class HobbyShareViewController:
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: HobbyCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "HobbyCollectionViewCell", for: indexPath) as! HobbyCollectionViewCell
 
+        cell.backgroundColor = UIColor.darkGray
+
         if collectionView == myHobbiesCollectionView {
             let hobby = myHobbies![indexPath.item]
             cell.hobbyLabel.text = hobby.hobbyName
@@ -124,10 +128,23 @@ class HobbyShareViewController:
             let key = Array(availableHobbies.keys)[indexPath.section]
             let hobbies = availableHobbies[key]
             let hobby = hobbies![indexPath.item]
+
+            for aHobby in hobbies! {
+                for myHobby in myHobbies! {
+                    if myHobby.hobbyName?.caseInsensitiveCompare(aHobby.hobbyName!) == .orderedSame {
+                        cell.backgroundColor = UIColor.red
+                        cell.hobbyLabel.backgroundColor = UIColor.red
+                    }
+                    else {
+                        cell.backgroundColor = UIColor.darkGray
+                        cell.hobbyLabel.backgroundColor = UIColor.darkGray
+                    }
+                }
+            }
             cell.hobbyLabel.text = hobby.hobbyName
         }
 
-        cell.backgroundColor = UIColor.darkGray
+
         return cell
     }
 
@@ -153,7 +170,7 @@ class HobbyShareViewController:
         }
         else {
             numberOfCells = 2
-            padding = 9
+            padding = 7
         }
 
         availableWidth = collectionView.frame.size.width - CGFloat(padding * (numberOfCells - 1))
@@ -165,6 +182,14 @@ class HobbyShareViewController:
     }
 
     // MARK: - Other
+
+    func getHobbies() {
+        if let data = UserDefaults.standard.object(forKey: "MyHobbies") as? NSData {
+            let savedHobbies = NSKeyedUnarchiver.unarchiveObject(with: data as Data) as! Array<Hobby>
+            myHobbies = savedHobbies
+        }
+    }
+
     func showError(message: String) {
         let alert = UIAlertController(title: kAppTitle, message: message, preferredStyle: .alert)
         let okayAction = UIAlertAction(title: "Dismiss", style: .default, handler: { (action) in
