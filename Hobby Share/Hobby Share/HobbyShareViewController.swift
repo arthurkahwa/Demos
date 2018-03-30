@@ -22,6 +22,7 @@ class HobbyShareViewController:
     let availableHobbies: [String: [Hobby]] = HobbyDataProvider().fetchHobbies()
     let locationManager = CLLocationManager()
     var currentLocation: CLLocation?
+    var redCellNames: [String] = []
 
     var myHobbies: [Hobby]? {
         didSet {
@@ -51,6 +52,10 @@ class HobbyShareViewController:
                 CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
             locationManager.stopUpdatingLocation()
             locationManager.startUpdatingLocation()
+        }
+
+        if redCellNames.count > 0 {
+            redCellNames.removeAll()
         }
 
         getHobbies()
@@ -118,32 +123,30 @@ class HobbyShareViewController:
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: HobbyCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "HobbyCollectionViewCell", for: indexPath) as! HobbyCollectionViewCell
 
-        cell.backgroundColor = UIColor.darkGray
-
         if collectionView == myHobbiesCollectionView {
             let hobby = myHobbies![indexPath.item]
             cell.hobbyLabel.text = hobby.hobbyName
+
+            cell.backgroundColor = UIColor.darkGray
         }
         else {
             let key = Array(availableHobbies.keys)[indexPath.section]
             let hobbies = availableHobbies[key]
             let hobby = hobbies![indexPath.item]
 
-            for aHobby in hobbies! {
-                for myHobby in myHobbies! {
-                    if myHobby.hobbyName?.caseInsensitiveCompare(aHobby.hobbyName!) == .orderedSame {
-                        cell.backgroundColor = UIColor.red
-                        cell.hobbyLabel.backgroundColor = UIColor.red
-                    }
-                    else {
-                        cell.backgroundColor = UIColor.darkGray
-                        cell.hobbyLabel.backgroundColor = UIColor.darkGray
-                    }
+            for myHobby in myHobbies! {
+                if myHobby.hobbyName?.caseInsensitiveCompare(hobby.hobbyName!) == ComparisonResult.orderedSame {
+                    cell.backgroundColor = UIColor.red
+                    redCellNames.append(hobby.hobbyName!)
                 }
             }
+
+            if !redCellNames.contains(hobby.hobbyName!) {
+                cell.backgroundColor = UIColor.darkGray
+            }
+
             cell.hobbyLabel.text = hobby.hobbyName
         }
-
 
         return cell
     }

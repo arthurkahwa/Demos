@@ -55,19 +55,19 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A Hobbits Hobby" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="kVC-QI-vlY">
-                                                    <rect key="frame" x="0.0" y="0.0" width="88" height="50"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </view>
-                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="kVC-QI-vlY" secondAttribute="bottom" id="73v-TH-umD"/>
-                                            <constraint firstItem="kVC-QI-vlY" firstAttribute="leading" secondItem="zG1-qa-zGh" secondAttribute="leading" id="bnp-Fy-t8G"/>
-                                            <constraint firstItem="kVC-QI-vlY" firstAttribute="top" secondItem="zG1-qa-zGh" secondAttribute="top" id="gDX-Gr-Lzi"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="kVC-QI-vlY" secondAttribute="trailing" constant="4" id="isj-ys-yGE"/>
+                                            <constraint firstItem="kVC-QI-vlY" firstAttribute="top" secondItem="zG1-qa-zGh" secondAttribute="top" id="3yr-XH-6Oc"/>
+                                            <constraint firstItem="kVC-QI-vlY" firstAttribute="leading" secondItem="zG1-qa-zGh" secondAttribute="leading" id="IiV-Mu-uam"/>
+                                            <constraint firstAttribute="trailing" secondItem="kVC-QI-vlY" secondAttribute="trailing" id="QxA-bL-x9m"/>
+                                            <constraint firstAttribute="bottom" secondItem="kVC-QI-vlY" secondAttribute="bottom" id="RcM-78-1EX"/>
                                         </constraints>
                                         <size key="customSize" width="100" height="50"/>
                                         <connections>
@@ -149,7 +149,7 @@
                                                 </label>
                                             </subviews>
                                         </view>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <size key="customSize" width="100" height="50"/>
                                         <connections>
                                             <outlet property="hobbyLabel" destination="YfS-9t-FDt" id="5fC-Lj-a79"/>
@@ -175,7 +175,7 @@
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username here" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="cZ1-ob-8Cn">
                                 <rect key="frame" x="16" y="135" width="147" height="30"/>
-                                <color key="backgroundColor" red="0.9631233808290155" green="0.9631233808290155" blue="0.9631233808290155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.80409382384058103" green="0.80409382384058103" blue="0.80409382384058103" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -286,13 +286,14 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="A Hobbits Hobby" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4gU-hH-wSf">
                                                     <rect key="frame" x="10" y="0.0" width="56" height="50"/>
-                                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </view>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="4gU-hH-wSf" secondAttribute="bottom" id="1QV-CZ-D1U"/>
                                             <constraint firstItem="4gU-hH-wSf" firstAttribute="top" secondItem="IZT-LL-hE6" secondAttribute="top" id="TTr-a6-k9M"/>
@@ -316,7 +317,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="trailingMargin" secondItem="1qo-nh-QGD" secondAttribute="trailing" constant="28" id="rNc-iX-5WD"/>
                                         <constraint firstItem="1qo-nh-QGD" firstAttribute="centerY" secondItem="RPY-td-SNh" secondAttribute="centerY" id="zBb-DZ-xHb"/>
@@ -354,13 +355,14 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="A Hobbits Hobby" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="nqf-AC-v6B">
                                                     <rect key="frame" x="0.0" y="0.0" width="80" height="50"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </view>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <size key="customSize" width="80" height="50"/>
                                         <connections>
                                             <outlet property="hobbyLabel" destination="nqf-AC-v6B" id="sj1-ck-JcO"/>
