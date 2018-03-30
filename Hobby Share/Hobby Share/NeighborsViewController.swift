@@ -56,6 +56,7 @@ class NeighborsViewController: HobbyShareViewController,
         // locationManager.startUpdatingLocation()
     }
 
+    // MARK: - Collection View
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let users = self.users {
             // myNeighborsMapView.removeAnnotation(users as! MKAnnotation)
@@ -66,12 +67,28 @@ class NeighborsViewController: HobbyShareViewController,
 
         self.fetchUsersWithHobby(hobby: myHobbies![indexPath.row])
 
-        let cell = collectionView.dataSource?.collectionView(collectionView, cellForItemAt: indexPath) as! HobbyCollectionViewCell
+        // let cell = collectionView.cellForItem(at: indexPath)
+        // cell?.contentView.backgroundColor = UIColor.darkGray
 
-        cell.backgroundColor = UIColor.red
+        // let cell = collectionView.dataSource?.collectionView(collectionView, cellForItemAt: indexPath) as! HobbyCollectionViewCell
 
+        // cell.contentView.backgroundColor = UIColor.red
+        // cell.hobbyLabel.backgroundColor = UIColor.red
+
+        // collectionView.reloadData()
     }
 
+    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath)
+        cell?.contentView.backgroundColor = UIColor.red
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+        // let cell = collectionView.cellForItem(at: indexPath)
+        // cell?.contentView.backgroundColor = UIColor.darkGray
+    }
+
+    // MARK: - Others
     func fetchUsersWithHobby(hobby: Hobby) {
         let userId = UserDefaults.standard.value(forKey: "CurrentUserId") as? String
         print(userId!)

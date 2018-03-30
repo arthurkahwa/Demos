@@ -55,11 +55,34 @@ class EditHobbiesViewController: HobbyShareViewController {
         }
     }
 
+    /*
+    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! HobbyCollectionViewCell
+        for hobby in myHobbies! {
+            if hobby.hobbyName?.caseInsensitiveCompare(cell.hobbyLabel.text!) == ComparisonResult.orderedSame {
+                cell.contentView.backgroundColor = UIColor.red
+
+                collectionView.reloadItems(at: [indexPath])
+            }
+        }
+    }
+    */
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! HobbyCollectionViewCell
+
         if collectionView == availableHobbiesCollectionView {
             let key = Array(availableHobbies.keys)[indexPath.section]
             let hobbies = availableHobbies[key]
             let hobby = hobbies![indexPath.item]
+
+            for myHobby in myHobbies! {
+                if myHobby.hobbyName?.caseInsensitiveCompare(cell.hobbyLabel.text!) == ComparisonResult.orderedSame {
+                    cell.contentView.backgroundColor = UIColor.red
+
+                    collectionView.reloadItems(at: [indexPath])
+                }
+            }
 
             if myHobbies?.contains(where: {$0.hobbyName == hobby.hobbyName}) == false {
                 if myHobbies!.count < kMaxHobbyCount {
@@ -67,19 +90,55 @@ class EditHobbiesViewController: HobbyShareViewController {
                     self.saveHobbies()
                 }
                 else {
-                    let alert = UIAlertController(title: kAppTitle, message: "You may only select up to \(kMaxHobbyCount). Please delete a hobby and try again.", preferredStyle: .alert)
-                    let okayAction = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
-                    alert.addAction(okayAction)
+                    let alert = UIAlertController(title: kAppTitle, message: "Replace one of the following with \(String(describing: hobby.hobbyName))", preferredStyle: .actionSheet)
+
+                    // let okayAction = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
+                    for myHobby in myHobbies! {
+                        let alertAction = UIAlertAction(title: myHobby.hobbyName, style: .destructive, handler: {(action) in
+                            if action.title?.caseInsensitiveCompare(myHobby.hobbyName!) == ComparisonResult.orderedSame {
+                                let i = self.myHobbies?.index(of: myHobby)
+                                self.myHobbies?.remove(at: i!)
+                                self.saveHobbies()
+
+                                self.myHobbies?.append(hobby)
+                                self.saveHobbies()
+                            }
+
+                            self.myHobbiesCollectionView.reloadData()
+                            self.availableHobbiesCollectionView.reloadData()
+
+                        })
+                        alert.addAction(alertAction)
+                    }
+
+                    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {(action) in
+                        alert.dismiss(animated: true, completion: nil)
+                    })
+
+                    //alert.addAction(okayAction)
+                    alert.addAction(cancelAction)
 
                     self.present(alert, animated: true)
                 }
-
+            }
+            else {
+                print(hobby.hobbyName! + " is already in the list")
             }
         }
         else {
             let alert = UIAlertController(title: kAppTitle, message: "Would you like to delete this Hobby", preferredStyle: .actionSheet)
             let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: {(action) in
                 self.myHobbies!.remove(at: indexPath.item)
+
+                for hobby in self.myHobbies! {
+                    if hobby.hobbyName?.caseInsensitiveCompare(cell.hobbyLabel.text!) == ComparisonResult.orderedSame {
+                        cell.contentView.backgroundColor = UIColor.red
+                    }
+                    else {
+                        cell.contentView.backgroundColor = UIColor.red
+                    }
+                }
+                collectionView.reloadItems(at: [indexPath])
 
                 self.saveHobbies()
             })
@@ -95,7 +154,9 @@ class EditHobbiesViewController: HobbyShareViewController {
     }
 
     // MARK: - Other
-    
+    func remove(hobby: Hobby) {
+
+    }
     /*
     // MARK: - Navigation
 

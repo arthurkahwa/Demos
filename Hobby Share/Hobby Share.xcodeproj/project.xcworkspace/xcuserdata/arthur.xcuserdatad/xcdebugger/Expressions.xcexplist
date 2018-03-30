@@ -3,6 +3,31 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "closure #2 in EditHobbiesViewController.collectionView(_:didSelectItemAt:):EditHobbiesViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "hobby">
+            </PersistentString>
+            <PersistentString
+               value = "action.title">
+            </PersistentString>
+            <PersistentString
+               value = "indexPath.item">
+            </PersistentString>
+            <PersistentString
+               value = "myHobbies">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "NeighborsViewController.collectionView(_:didSelectItemAt:):NeighborsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "cell.hobbyLabel.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "HobbyShareViewController.collectionView(_:cellForItemAt:):HobbyShareViewController.swift">
          <PersistentStrings>
             <PersistentString
