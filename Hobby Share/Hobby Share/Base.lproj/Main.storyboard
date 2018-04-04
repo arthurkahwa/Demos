@@ -142,9 +142,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hobby" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="YfS-9t-FDt">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hobby" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="YfS-9t-FDt">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -152,6 +151,12 @@
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="YfS-9t-FDt" firstAttribute="leading" secondItem="SGi-XA-KsD" secondAttribute="leading" id="NfM-iJ-mDX"/>
+                                            <constraint firstAttribute="bottom" secondItem="YfS-9t-FDt" secondAttribute="bottom" id="TBw-gm-5F0"/>
+                                            <constraint firstItem="YfS-9t-FDt" firstAttribute="top" secondItem="SGi-XA-KsD" secondAttribute="top" id="ci4-JJ-Q2q"/>
+                                            <constraint firstAttribute="trailing" secondItem="YfS-9t-FDt" secondAttribute="trailing" id="j9e-cU-GDs"/>
+                                        </constraints>
                                         <size key="customSize" width="100" height="50"/>
                                         <connections>
                                             <outlet property="hobbyLabel" destination="YfS-9t-FDt" id="5fC-Lj-a79"/>
@@ -205,8 +210,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wcK-so-ZXP">
-                                <rect key="frame" x="172" y="569" width="30" height="30"/>
-                                <state key="normal" title="Edit"/>
+                                <rect key="frame" x="124" y="569" width="126" height="30"/>
+                                <color key="backgroundColor" red="0.80409382380000005" green="0.80409382380000005" blue="0.80409382380000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Edit">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <segue destination="T5G-7x-YnS" kind="show" id="oHQ-Pa-aLC"/>
                                 </connections>
@@ -220,30 +228,31 @@
                             <constraint firstItem="Obl-1C-VK2" firstAttribute="top" secondItem="FkY-Tn-Cwy" secondAttribute="bottom" constant="27" id="Aod-MF-8VP"/>
                             <constraint firstItem="uQq-YU-pMS" firstAttribute="leading" secondItem="Obl-1C-VK2" secondAttribute="leading" id="C4b-JF-mXs"/>
                             <constraint firstItem="cZ1-ob-8Cn" firstAttribute="trailing" secondItem="ThH-56-iLq" secondAttribute="trailing" id="KBD-1u-m0R"/>
+                            <constraint firstItem="wcK-so-ZXP" firstAttribute="top" secondItem="uQq-YU-pMS" secondAttribute="bottom" constant="8" symbolic="YES" id="LSp-ex-xpe"/>
                             <constraint firstItem="Obl-1C-VK2" firstAttribute="leading" secondItem="FkY-Tn-Cwy" secondAttribute="leading" id="LU7-b3-ucC"/>
                             <constraint firstItem="FkY-Tn-Cwy" firstAttribute="trailing" secondItem="ThH-56-iLq" secondAttribute="trailing" id="OBF-BF-1Hl"/>
                             <constraint firstItem="uQq-YU-pMS" firstAttribute="top" secondItem="zTT-bi-7xO" secondAttribute="bottom" constant="8" symbolic="YES" id="Q5d-XL-k7E"/>
                             <constraint firstItem="cZ1-ob-8Cn" firstAttribute="top" secondItem="dvo-Ui-dSl" secondAttribute="bottom" constant="8" symbolic="YES" id="WFD-Hi-8T0"/>
                             <constraint firstItem="dvo-Ui-dSl" firstAttribute="leading" secondItem="c6U-wt-KMg" secondAttribute="leading" id="X56-G2-Nvf"/>
                             <constraint firstAttribute="bottom" secondItem="Obl-1C-VK2" secondAttribute="bottom" constant="217" id="cPA-0k-b8g"/>
-                            <constraint firstItem="wcK-so-ZXP" firstAttribute="centerX" secondItem="uQq-YU-pMS" secondAttribute="centerX" id="ePP-wD-boC"/>
+                            <constraint firstItem="wcK-so-ZXP" firstAttribute="leading" secondItem="8QZ-Lw-rcg" secondAttribute="leading" constant="124" id="g49-pJ-e0s"/>
                             <constraint firstItem="uQq-YU-pMS" firstAttribute="trailing" secondItem="Obl-1C-VK2" secondAttribute="trailing" id="jbK-4h-AzS"/>
                             <constraint firstItem="zTT-bi-7xO" firstAttribute="centerX" secondItem="Obl-1C-VK2" secondAttribute="centerX" id="o1T-GF-wRu"/>
                             <constraint firstAttribute="bottom" secondItem="ThH-56-iLq" secondAttribute="bottom" constant="275" id="o6L-du-WPB"/>
-                            <constraint firstItem="wcK-so-ZXP" firstAttribute="top" secondItem="uQq-YU-pMS" secondAttribute="bottom" constant="8" symbolic="YES" id="psp-UE-atN"/>
                             <constraint firstItem="FkY-Tn-Cwy" firstAttribute="leading" secondItem="c6U-wt-KMg" secondAttribute="leading" id="qXp-8p-nZ1"/>
                             <constraint firstItem="cZ1-ob-8Cn" firstAttribute="leading" secondItem="dvo-Ui-dSl" secondAttribute="leading" id="sMP-ip-que"/>
                             <constraint firstItem="uQq-YU-pMS" firstAttribute="leading" secondItem="ekn-Gz-0gf" secondAttribute="leadingMargin" id="snd-NZ-81f"/>
                             <constraint firstItem="ThH-56-iLq" firstAttribute="leading" secondItem="c6U-wt-KMg" secondAttribute="leading" id="tdS-bt-zH1"/>
                             <constraint firstItem="Obl-1C-VK2" firstAttribute="trailing" secondItem="ekn-Gz-0gf" secondAttribute="trailingMargin" id="vEj-RU-jCe"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dvo-Ui-dSl" secondAttribute="trailing" constant="20" symbolic="YES" id="vFB-5m-jLE"/>
+                            <constraint firstItem="wcK-so-ZXP" firstAttribute="centerX" secondItem="uQq-YU-pMS" secondAttribute="centerX" id="z5l-cv-00c"/>
                             <constraint firstItem="zTT-bi-7xO" firstAttribute="top" secondItem="Obl-1C-VK2" secondAttribute="bottom" constant="8" symbolic="YES" id="zAx-80-y8E"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8QZ-Lw-rcg"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Me" id="4nF-Ic-l2P"/>
                     <navigationItem key="navigationItem" title="Me" prompt="New Username? Sign Up. -  Existing Username? Sign In" id="Rr1-TL-tYD">
-                        <barButtonItem key="rightBarButtonItem" title="Submit Request" id="VLc-bF-lud">
+                        <barButtonItem key="rightBarButtonItem" title="Login" id="VLc-bF-lud">
                             <connections>
                                 <action selector="saveButtonPressed:" destination="GKi-xf-YO2" id="6Wc-2x-9oi"/>
                             </connections>

@@ -53,6 +53,24 @@ class EditHobbiesViewController: HobbyShareViewController {
                 self.showError(message: returnedUser.status.statusDescription!)
             }
         }
+
+        // self.view.setNeedsDisplay()
+
+        var cellsToColorRed = [HobbyCollectionViewCell]()
+
+        for case let visibleCell as HobbyCollectionViewCell in availableHobbiesCollectionView.visibleCells {
+            visibleCell.backgroundColor = UIColor.darkGray
+
+            for hobby in self.myHobbies! {
+                if hobby.hobbyName?.caseInsensitiveCompare(visibleCell.hobbyLabel.text!) == ComparisonResult.orderedSame {
+                    cellsToColorRed.append(visibleCell)
+                }
+            }
+        }
+
+        for cellToColorRed in cellsToColorRed {
+            cellToColorRed.backgroundColor = UIColor.red
+        }
     }
 
     /*
@@ -78,9 +96,9 @@ class EditHobbiesViewController: HobbyShareViewController {
 
             for myHobby in myHobbies! {
                 if myHobby.hobbyName?.caseInsensitiveCompare(cell.hobbyLabel.text!) == ComparisonResult.orderedSame {
-                    cell.contentView.backgroundColor = UIColor.red
+                    // cell.contentView.backgroundColor = UIColor.red
 
-                    collectionView.reloadItems(at: [indexPath])
+                    // self.view.reloadInputViews()
                 }
             }
 
@@ -103,10 +121,6 @@ class EditHobbiesViewController: HobbyShareViewController {
                                 self.myHobbies?.append(hobby)
                                 self.saveHobbies()
                             }
-
-                            self.myHobbiesCollectionView.reloadData()
-                            self.availableHobbiesCollectionView.reloadData()
-
                         })
                         alert.addAction(alertAction)
                     }
@@ -122,23 +136,13 @@ class EditHobbiesViewController: HobbyShareViewController {
                 }
             }
             else {
-                print(hobby.hobbyName! + " is already in the list")
+                print("Hobby " + hobby.hobbyName! + " is already in the list")
             }
         }
         else {
             let alert = UIAlertController(title: kAppTitle, message: "Would you like to delete this Hobby", preferredStyle: .actionSheet)
             let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: {(action) in
                 self.myHobbies!.remove(at: indexPath.item)
-
-                for hobby in self.myHobbies! {
-                    if hobby.hobbyName?.caseInsensitiveCompare(cell.hobbyLabel.text!) == ComparisonResult.orderedSame {
-                        cell.contentView.backgroundColor = UIColor.red
-                    }
-                    else {
-                        cell.contentView.backgroundColor = UIColor.red
-                    }
-                }
-                collectionView.reloadItems(at: [indexPath])
 
                 self.saveHobbies()
             })
@@ -151,12 +155,24 @@ class EditHobbiesViewController: HobbyShareViewController {
 
             self.present(alert, animated: true)
         }
+
+        // self.view.reloadInputViews()
+        // availableHobbiesCollectionView.setNeedsLayout()
+        // self.myHobbiesCollectionView.setNeedsDisplay()
+
+        /*
+        for hobby in self.myHobbies! {
+            if hobby.hobbyName?.caseInsensitiveCompare(cell.hobbyLabel.text!) == ComparisonResult.orderedSame {
+                cell.contentView.backgroundColor = UIColor.red
+            }
+            else {
+                cell.contentView.backgroundColor = UIColor.darkGray
+            }
+        }
+        */
     }
 
     // MARK: - Other
-    func remove(hobby: Hobby) {
-
-    }
     /*
     // MARK: - Navigation
 

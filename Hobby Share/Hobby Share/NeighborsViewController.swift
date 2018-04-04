@@ -58,7 +58,8 @@ class NeighborsViewController: HobbyShareViewController,
 
     // MARK: - Collection View
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let users = self.users {
+
+                if let users = self.users {
             // myNeighborsMapView.removeAnnotation(users as! MKAnnotation)
             for user in users {
                 myNeighborsMapView.removeAnnotation(user)
@@ -70,22 +71,27 @@ class NeighborsViewController: HobbyShareViewController,
         // let cell = collectionView.cellForItem(at: indexPath)
         // cell?.contentView.backgroundColor = UIColor.darkGray
 
-        // let cell = collectionView.dataSource?.collectionView(collectionView, cellForItemAt: indexPath) as! HobbyCollectionViewCell
 
+
+        let cell = collectionView.dataSource?.collectionView(collectionView, cellForItemAt: indexPath) as! HobbyCollectionViewCell
+
+        for visibleCell in collectionView.visibleCells {
+            visibleCell.contentView.backgroundColor = UIColor.darkGray
+        }
+        print(String(describing: indexPath))
         // cell.contentView.backgroundColor = UIColor.red
         // cell.hobbyLabel.backgroundColor = UIColor.red
 
         // collectionView.reloadData()
+
+        // self.view.reloadInputViews()
     }
 
     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath)
         cell?.contentView.backgroundColor = UIColor.red
-    }
 
-    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
-        // let cell = collectionView.cellForItem(at: indexPath)
-        // cell?.contentView.backgroundColor = UIColor.darkGray
+        // self.view.reloadInputViews()
     }
 
     // MARK: - Others
@@ -145,6 +151,7 @@ class NeighborsViewController: HobbyShareViewController,
             }
         }
 
+        // self.view.reloadInputViews()
     }
 
     /*
