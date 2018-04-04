@@ -71,20 +71,16 @@ class NeighborsViewController: HobbyShareViewController,
         // let cell = collectionView.cellForItem(at: indexPath)
         // cell?.contentView.backgroundColor = UIColor.darkGray
 
-
-
-        let cell = collectionView.dataSource?.collectionView(collectionView, cellForItemAt: indexPath) as! HobbyCollectionViewCell
-
-        for visibleCell in collectionView.visibleCells {
-            visibleCell.contentView.backgroundColor = UIColor.darkGray
+        for case let visibleCell as HobbyCollectionViewCell in myHobbiesCollectionView.visibleCells {
+            visibleCell.backgroundColor = UIColor.darkGray
+            visibleCell.hobbyLabel.backgroundColor = UIColor.darkGray
         }
-        print(String(describing: indexPath))
-        // cell.contentView.backgroundColor = UIColor.red
-        // cell.hobbyLabel.backgroundColor = UIColor.red
+        // print(String(describing: indexPath))
 
-        // collectionView.reloadData()
+        let selectedCell = myHobbiesCollectionView.cellForItem(at: indexPath) as!  HobbyCollectionViewCell
+        selectedCell.backgroundColor = UIColor.red
+        selectedCell.hobbyLabel.backgroundColor = UIColor.red
 
-        // self.view.reloadInputViews()
     }
 
     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
