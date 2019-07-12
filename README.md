@@ -8,7 +8,8 @@ Move your hand in any direction - Up, down, forwards, backwards.
 Take a step back to see what the drawing looks like from all angles.
 
 ## AR Planets
-Found Rusell's Teapot floating on space. 
+Found Rusell's Teapot floating around in space.
+Also shows clearly, that the sun revolves around the earth.
 Run this on a real iPad.
 Start the App and take a couple of steps back until all the Planets and the Teapot are visible
 
