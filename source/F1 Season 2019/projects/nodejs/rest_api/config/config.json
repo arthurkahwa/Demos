@@ -1,0 +1,12 @@
+{
+  "api": {
+    "port": 3000
+  },
+  "db": {
+    "user": "arthur",
+    "password": "321!Ende",
+    "database": "f1season2019",
+    "host": "localhost",
+    "port": 5432
+  }
+}
