@@ -13,6 +13,7 @@ class TeamDetailViewController: UIViewController {
     var team: Team!
     
     @IBOutlet weak var teamName: UILabel!
+    @IBOutlet weak var logo: UIImageView!
     @IBOutlet weak var countryOfOrigin: UILabel!
     @IBOutlet weak var driver1: UILabel!
     @IBOutlet weak var driver2: UILabel!
@@ -29,6 +30,7 @@ class TeamDetailViewController: UIViewController {
         self.navigationItem.title = team.name
         
         teamName.text = team.name
+        logo.image = UIImage(data: team.image!)
         countryOfOrigin.text = team.countryOfOrigin
         driver1.text = team.drivers![0].name
         driver2.text = team.drivers![1].name

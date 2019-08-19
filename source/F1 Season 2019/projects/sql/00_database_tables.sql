@@ -1,18 +1,19 @@
 create database f1season2019
-	with owner postgres;
+	with owner arthur;
 
-create table if not exists team
+create table team
 (
 	id serial not null
 		constraint team_pk
 			primary key,
 	name varchar(128) not null,
-	"countryOfOrigin" varchar(128)
+	"countryOfOrigin" varchar(128),
+	logopath varchar(32)
 );
 
-alter table team owner to postgres;
+alter table team owner to arthur;
 
-create table if not exists driver
+create table driver
 (
 	id serial not null
 		constraint driver_pk
@@ -23,5 +24,5 @@ create table if not exists driver
 			references team
 );
 
-alter table driver owner to postgres;
+alter table driver owner to arthur;
 

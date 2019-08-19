@@ -13,4 +13,7 @@ struct Team: Decodable {
     let name: String?
     let countryOfOrigin: String?
     let drivers: [Driver]?
+    let logopath: String
+    
+    var image: Data?
 }

@@ -10,5 +10,5 @@ import Foundation
 
 struct F1Season: Decodable {
     let info: String?
-    let teams: [Team]?
+    var teams: [Team]?
 }

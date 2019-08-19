@@ -22,6 +22,7 @@ class TeamTableViewController: UITableViewController {
             self.navigationItem.title = season.info
             
             self.tableView.reloadData()
+            self.tableView.rowHeight = 60
         }
     }
     
@@ -36,10 +37,20 @@ class TeamTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "teamCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "teamCell", for: indexPath) as! TeamInfoTableViewCell
 
-        cell.textLabel?.text = self.f1Season.teams![indexPath.row].name
-        cell.accessoryType = .disclosureIndicator
+        cell.teamLabel.text = self.f1Season.teams![indexPath.row].name
+        
+        fetchLogo(imageName: self.f1Season.teams![indexPath.row].logopath) {
+            (imageData) in
+            
+            self.f1Season.teams![indexPath.row].image = imageData
+            cell.teamLogo.image = UIImage(data: imageData)
+            
+            self.tableView.reloadData()
+            
+        }
+        // cell.accessoryType = .disclosureIndicator
 
         return cell
     }
@@ -64,25 +75,39 @@ class TeamTableViewController: UITableViewController {
     // MARK - Helpers
     
     func seasonData(completionHandler: @escaping (F1Season) -> Void) {
-        let url = URL(string: "http://192.168.2.199:3000/f1/teams")! // For the sake of brevity
-        
-        let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
+        let task = URLSession.shared.dataTask(with: API.seasonUrl(to: "teams", for: "data")) {(data, response, error) in
+            
             guard let data = data else { return }
             
             do {
-            let season = try JSONDecoder().decode(F1Season.self, from: data) // JSONDecoder().decode(F1Season.self, from: data)
-            DispatchQueue.main.async(execute: {() -> Void in
-                completionHandler(season)
-                // self.f1Season = season
-                // self.tableView.reloadData()
-            })
-            
+                let season = try JSONDecoder().decode(F1Season.self, from: data)
+                DispatchQueue.main.async(execute: {() -> Void in
+                    completionHandler(season)
+                })
             }
             catch let jsonError {
                 print(jsonError)
             }
-            
         }
         task.resume()
+    }
+    
+    func fetchLogo(imageName: String, completionHandler: @escaping(Data) -> Void) {
+        let task = URLSession.shared.dataTask(with: API.seasonUrl(to: imageName, for: "image")) {(data, response, error) in
+            
+            DispatchQueue.main.async(execute: {() -> Void in
+                completionHandler(data!)
+            })
+        }
+        task.resume()
+    }
+    
+    func prepareImageRequest(data: Data?, error: Error?) -> UIImage {
+        guard
+        let imageData = data,
+            let image = UIImage(data: imageData) else {
+                return UIImage()
+        }
+        return image
     }
 }

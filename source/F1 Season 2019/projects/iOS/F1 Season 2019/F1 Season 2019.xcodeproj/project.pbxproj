@@ -11,6 +11,8 @@
 		8E09311823099DBF00BA128D /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E09311723099DBF00BA128D /* Driver.swift */; };
 		8E09311A2309B18D00BA128D /* TeamDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0931192309B18D00BA128D /* TeamDetailViewController.swift */; };
 		8E09311C2309D44D00BA128D /* F1Season.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E09311B2309D44D00BA128D /* F1Season.swift */; };
+		8E093120230AE2BE00BA128D /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E09311F230AE2BE00BA128D /* API.swift */; };
+		8E093122230AED5B00BA128D /* TeamInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E093121230AED5B00BA128D /* TeamInfoTableViewCell.swift */; };
 		8EFFD6792309975D009A68E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFFD6782309975D009A68E0 /* AppDelegate.swift */; };
 		8EFFD67E2309975D009A68E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EFFD67C2309975D009A68E0 /* Main.storyboard */; };
 		8EFFD6802309975E009A68E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EFFD67F2309975E009A68E0 /* Assets.xcassets */; };
@@ -23,6 +25,8 @@
 		8E09311723099DBF00BA128D /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
 		8E0931192309B18D00BA128D /* TeamDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailViewController.swift; sourceTree = "<group>"; };
 		8E09311B2309D44D00BA128D /* F1Season.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = F1Season.swift; sourceTree = "<group>"; };
+		8E09311F230AE2BE00BA128D /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		8E093121230AED5B00BA128D /* TeamInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamInfoTableViewCell.swift; sourceTree = "<group>"; };
 		8EFFD6752309975D009A68E0 /* F1 Season 2019.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "F1 Season 2019.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EFFD6782309975D009A68E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EFFD67D2309975D009A68E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -72,6 +76,8 @@
 				8E09311723099DBF00BA128D /* Driver.swift */,
 				8E0931192309B18D00BA128D /* TeamDetailViewController.swift */,
 				8E09311B2309D44D00BA128D /* F1Season.swift */,
+				8E09311F230AE2BE00BA128D /* API.swift */,
+				8E093121230AED5B00BA128D /* TeamInfoTableViewCell.swift */,
 			);
 			path = "F1 Season 2019";
 			sourceTree = "<group>";
@@ -151,8 +157,10 @@
 				8E09311823099DBF00BA128D /* Driver.swift in Sources */,
 				8E09311623099D6700BA128D /* Team.swift in Sources */,
 				8E09311C2309D44D00BA128D /* F1Season.swift in Sources */,
+				8E093122230AED5B00BA128D /* TeamInfoTableViewCell.swift in Sources */,
 				8EFFD6792309975D009A68E0 /* AppDelegate.swift in Sources */,
 				8EFFD68B23099847009A68E0 /* TeamTableViewController.swift in Sources */,
+				8E093120230AE2BE00BA128D /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

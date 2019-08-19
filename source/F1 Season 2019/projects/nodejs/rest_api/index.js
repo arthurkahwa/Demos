@@ -13,6 +13,8 @@ app.use(
     })
 );
 
+app.use('/f1/images', express.static('images'))
+
 app.get('/f1/teams', queries.getAllTeams);
 app.get('/f1/static', queries.getStaticContent);
 
