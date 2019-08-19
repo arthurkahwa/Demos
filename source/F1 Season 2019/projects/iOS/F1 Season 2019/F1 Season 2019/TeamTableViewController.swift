@@ -8,12 +8,29 @@
 
 import UIKit
 
+extension TeamTableViewController: UISearchResultsUpdating {
+    // MARK - UISearchResultsUpdating delegate
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearchText(searchController.searchBar.text!)
+    }
+}
+
 class TeamTableViewController: UITableViewController {
 
     var f1Season = F1Season(info: "", teams: [])
+    var filteredTeams = [Team]()
+    let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // setup search controller
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search for a F1 team"
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        definesPresentationContext = true
         
         seasonData {
             (season) in
@@ -33,12 +50,35 @@ class TeamTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isFiltering() {
+            return filteredTeams.count
+        }
         return self.f1Season.teams!.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "teamCell", for: indexPath) as! TeamInfoTableViewCell
 
+        var team: Team
+        if isFiltering() {
+            team = filteredTeams[indexPath.row]
+        }
+        else {
+            team = self.f1Season.teams![indexPath.row]
+        }
+        
+        cell.teamLabel.text = team.name
+        
+        fetchLogo(imageName: team.logopath) {
+            (imageData) in
+            
+            team.image = imageData
+            cell.teamLogo.image = UIImage(data: imageData)
+            
+            self.tableView.reloadData()
+        }
+        
+        /*
         cell.teamLabel.text = self.f1Season.teams![indexPath.row].name
         
         fetchLogo(imageName: self.f1Season.teams![indexPath.row].logopath) {
@@ -50,7 +90,9 @@ class TeamTableViewController: UITableViewController {
             self.tableView.reloadData()
             
         }
-        // cell.accessoryType = .disclosureIndicator
+        */
+        
+        cell.accessoryType = .disclosureIndicator
 
         return cell
     }
@@ -64,7 +106,14 @@ class TeamTableViewController: UITableViewController {
         
         if segue.identifier ==  "showTeamDetail" {
             if let row = tableView.indexPathForSelectedRow?.row {
-                let team = self.f1Season.teams![row]
+                
+                let team: Team
+                if isFiltering() {
+                    team = filteredTeams[row]
+                }
+                else {
+                    team = self.f1Season.teams![row]
+                }
                 let detailViewController = segue.destination as! TeamDetailViewController
                 detailViewController.team = team
             }
@@ -109,5 +158,21 @@ class TeamTableViewController: UITableViewController {
                 return UIImage()
         }
         return image
+    }
+    
+    func searchIsEmpty() -> Bool {
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
+    
+    func filterContentForSearchText(_ searchText: String, scope: String = "All") {
+        filteredTeams = (self.f1Season.teams?.filter({(team: Team) -> Bool in
+            return (team.name?.lowercased().contains(searchText.lowercased()))!
+        }))!
+        
+        self.tableView.reloadData()
+    }
+    
+    func isFiltering() -> Bool {
+        return searchController.isActive && !searchIsEmpty()
     }
 }
