@@ -28,12 +28,12 @@ const getAllTeams = async (request, response) => {
     const results = {};
     const listOfTeams = [];
 
-    results['info'] = 'F1 Season 2019 API';
+    results['info'] = 'F1 Season 2019 Team Info';
 
     let teamQuery = 'select * from team';
     const teams = await execute(teamQuery);
     for (const row in teams.rows) {
-        let driverQuery = `select name from driver where fkteam = ${teams.rows[row].id}`;
+        let driverQuery = `select id, name from driver where fkteam = ${teams.rows[row].id}`;
         const drivers = await execute(driverQuery);
 
         teams.rows[row]['drivers'] = drivers.rows;
