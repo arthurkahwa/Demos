@@ -1,13 +1,5 @@
 # Demos
 
-## AR Drawing.
-#### nYou must run this on a real device, as it does not run on the simulator.
-
-Hold the button at the bottom.
-Move your hand in any direction - Up, down, forwards, backwards.
-- keep the button pressed until you are done.
-Take a step back to see what the drawing looks like from all angles.
-
 ## AR Planets
 #### You must run this on a real device, as it does not run on the simulator.
 
