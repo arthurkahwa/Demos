@@ -49,7 +49,6 @@ class TeamTableViewController: UITableViewController {
                                         image: imageData)
                     
                         self.allTeams.append(team)
-                    print("All teams: \(self.allTeams.count)")
                     
                         self.tableView.reloadData()
                 }
@@ -69,12 +68,10 @@ class TeamTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isFiltering() {
-            print("filtered teams: \(filteredTeams.count)")
             
             return filteredTeams.count
         }
         
-        // print("All teams: \(allTeams.count)")
         return allTeams.count
     }
 
@@ -91,19 +88,6 @@ class TeamTableViewController: UITableViewController {
         
         cell.teamLogo.image = UIImage(data: team.image!)
         cell.teamLabel.text = team.name
-        
-        print("\(String(describing: team.name)) - \(team.logopath)")
-        
-        /*
-        fetchLogo(imageName: team.logopath) {
-            (imageData) in
-            
-            team.image = imageData
-            cell.teamLogo.image = UIImage(data: imageData)
-            
-            self.tableView.reloadData()
-        }
-        */
         
         cell.accessoryType = .disclosureIndicator
 
@@ -127,8 +111,6 @@ class TeamTableViewController: UITableViewController {
                 else {
                     team = allTeams[row]
                 }
-                
-                // print("\(String(describing: team.name)) - \(team.logopath)")
                 
                 let detailViewController = segue.destination as! TeamDetailViewController
                 detailViewController.team = team
