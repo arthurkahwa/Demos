@@ -9,7 +9,7 @@
 import Foundation
 
 struct API {
-    private static let baseUrlString = "http://192.168.2.199:3000/f1/"
+    private static let baseUrlString = "http://localhost:3000/f1/"
     
     static func seasonUrl(to path: String, for type: String) -> URL {
         var fullPath: String

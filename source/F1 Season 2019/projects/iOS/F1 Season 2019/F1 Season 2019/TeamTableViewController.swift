@@ -17,7 +17,8 @@ extension TeamTableViewController: UISearchResultsUpdating {
 
 class TeamTableViewController: UITableViewController {
 
-    var f1Season = F1Season(info: "", teams: [])
+    // var f1Season = F1Season(info: "", teams: [])
+    var allTeams = [Team]()
     var filteredTeams = [Team]()
     let searchController = UISearchController(searchResultsController: nil)
     
@@ -35,11 +36,28 @@ class TeamTableViewController: UITableViewController {
         seasonData {
             (season) in
             
-            self.f1Season = season
             self.navigationItem.title = season.info
             
+            for t in season.teams! {
+                self.fetchLogo(imageName: t.logopath) {
+                    (imageData) in
+                        let team = Team(id: t.id,
+                                        name: t.name,
+                                        countryOfOrigin: t.countryOfOrigin,
+                                        drivers: t.drivers,
+                                        logopath: t.logopath,
+                                        image: imageData)
+                    
+                        self.allTeams.append(team)
+                    print("All teams: \(self.allTeams.count)")
+                    
+                        self.tableView.reloadData()
+                }
+            }
+            
+            self.tableView.rowHeight = 56
+            
             self.tableView.reloadData()
-            self.tableView.rowHeight = 60
         }
     }
     
@@ -51,9 +69,13 @@ class TeamTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isFiltering() {
+            print("filtered teams: \(filteredTeams.count)")
+            
             return filteredTeams.count
         }
-        return self.f1Season.teams!.count
+        
+        // print("All teams: \(allTeams.count)")
+        return allTeams.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -64,11 +86,15 @@ class TeamTableViewController: UITableViewController {
             team = filteredTeams[indexPath.row]
         }
         else {
-            team = self.f1Season.teams![indexPath.row]
+            team = allTeams[indexPath.row]
         }
         
+        cell.teamLogo.image = UIImage(data: team.image!)
         cell.teamLabel.text = team.name
         
+        print("\(String(describing: team.name)) - \(team.logopath)")
+        
+        /*
         fetchLogo(imageName: team.logopath) {
             (imageData) in
             
@@ -76,19 +102,6 @@ class TeamTableViewController: UITableViewController {
             cell.teamLogo.image = UIImage(data: imageData)
             
             self.tableView.reloadData()
-        }
-        
-        /*
-        cell.teamLabel.text = self.f1Season.teams![indexPath.row].name
-        
-        fetchLogo(imageName: self.f1Season.teams![indexPath.row].logopath) {
-            (imageData) in
-            
-            self.f1Season.teams![indexPath.row].image = imageData
-            cell.teamLogo.image = UIImage(data: imageData)
-            
-            self.tableView.reloadData()
-            
         }
         */
         
@@ -107,13 +120,16 @@ class TeamTableViewController: UITableViewController {
         if segue.identifier ==  "showTeamDetail" {
             if let row = tableView.indexPathForSelectedRow?.row {
                 
-                let team: Team
+                var team: Team
                 if isFiltering() {
                     team = filteredTeams[row]
                 }
                 else {
-                    team = self.f1Season.teams![row]
+                    team = allTeams[row]
                 }
+                
+                // print("\(String(describing: team.name)) - \(team.logopath)")
+                
                 let detailViewController = segue.destination as! TeamDetailViewController
                 detailViewController.team = team
             }
@@ -142,7 +158,8 @@ class TeamTableViewController: UITableViewController {
     }
     
     func fetchLogo(imageName: String, completionHandler: @escaping(Data) -> Void) {
-        let task = URLSession.shared.dataTask(with: API.seasonUrl(to: imageName, for: "image")) {(data, response, error) in
+        let task = URLSession.shared.dataTask(with: API.seasonUrl(to: imageName, for: "image")) {
+            (data, response, error) in
             
             DispatchQueue.main.async(execute: {() -> Void in
                 completionHandler(data!)
@@ -151,6 +168,7 @@ class TeamTableViewController: UITableViewController {
         task.resume()
     }
     
+    /*
     func prepareImageRequest(data: Data?, error: Error?) -> UIImage {
         guard
         let imageData = data,
@@ -159,15 +177,16 @@ class TeamTableViewController: UITableViewController {
         }
         return image
     }
+    */
     
     func searchIsEmpty() -> Bool {
         return searchController.searchBar.text?.isEmpty ?? true
     }
     
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
-        filteredTeams = (self.f1Season.teams?.filter({(team: Team) -> Bool in
+        filteredTeams = (allTeams.filter({(team: Team) -> Bool in
             return (team.name?.lowercased().contains(searchText.lowercased()))!
-        }))!
+        }))
         
         self.tableView.reloadData()
     }
