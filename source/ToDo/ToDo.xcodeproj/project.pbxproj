@@ -18,6 +18,8 @@
 		8E7B01D523B503B5001B9602 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B01D423B503B5001B9602 /* Location.swift */; };
 		8E7B01D723B50804001B9602 /* LocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B01D623B50804001B9602 /* LocationTests.swift */; };
 		8E7B01DA23B50AE2001B9602 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E7B01D923B50AE2001B9602 /* CoreLocation.framework */; };
+		8E7B01DE23B51680001B9602 /* ItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B01DD23B51680001B9602 /* ItemManager.swift */; };
+		8E7B01E023B51776001B9602 /* ItemManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B01DF23B51776001B9602 /* ItemManagerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		8E7B01D423B503B5001B9602 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		8E7B01D623B50804001B9602 /* LocationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTests.swift; sourceTree = "<group>"; };
 		8E7B01D923B50AE2001B9602 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		8E7B01DD23B51680001B9602 /* ItemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemManager.swift; sourceTree = "<group>"; };
+		8E7B01DF23B51776001B9602 /* ItemManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemManagerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,7 @@
 				8E7B01BC23B3DC6F001B9602 /* Info.plist */,
 				8E7B01D223B3E68C001B9602 /* ToDoItem.swift */,
 				8E7B01D423B503B5001B9602 /* Location.swift */,
+				8E7B01DD23B51680001B9602 /* ItemManager.swift */,
 			);
 			path = ToDo;
 			sourceTree = "<group>";
@@ -105,6 +110,7 @@
 		8E7B01C423B3DC6F001B9602 /* ToDoTests */ = {
 			isa = PBXGroup;
 			children = (
+				8E7B01DF23B51776001B9602 /* ItemManagerTests.swift */,
 				8E7B01D623B50804001B9602 /* LocationTests.swift */,
 				8E7B01C723B3DC6F001B9602 /* Info.plist */,
 				8E7B01D023B3E386001B9602 /* ToDoItemsTest.swift */,
@@ -225,6 +231,7 @@
 				8E7B01AF23B3DC6C001B9602 /* AppDelegate.swift in Sources */,
 				8E7B01D523B503B5001B9602 /* Location.swift in Sources */,
 				8E7B01D323B3E68C001B9602 /* ToDoItem.swift in Sources */,
+				8E7B01DE23B51680001B9602 /* ItemManager.swift in Sources */,
 				8E7B01B123B3DC6C001B9602 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -233,6 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E7B01E023B51776001B9602 /* ItemManagerTests.swift in Sources */,
 				8E7B01D723B50804001B9602 /* LocationTests.swift in Sources */,
 				8E7B01D123B3E386001B9602 /* ToDoItemsTest.swift in Sources */,
 			);
