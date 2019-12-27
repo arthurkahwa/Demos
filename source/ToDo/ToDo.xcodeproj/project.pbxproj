@@ -100,9 +100,7 @@
 				8E7B01B723B3DC6F001B9602 /* Assets.xcassets */,
 				8E7B01B923B3DC6F001B9602 /* LaunchScreen.storyboard */,
 				8E7B01BC23B3DC6F001B9602 /* Info.plist */,
-				8E7B01D223B3E68C001B9602 /* ToDoItem.swift */,
-				8E7B01D423B503B5001B9602 /* Location.swift */,
-				8E7B01DD23B51680001B9602 /* ItemManager.swift */,
+				8E7B01E123B65C78001B9602 /* Model */,
 			);
 			path = ToDo;
 			sourceTree = "<group>";
@@ -110,10 +108,8 @@
 		8E7B01C423B3DC6F001B9602 /* ToDoTests */ = {
 			isa = PBXGroup;
 			children = (
-				8E7B01DF23B51776001B9602 /* ItemManagerTests.swift */,
-				8E7B01D623B50804001B9602 /* LocationTests.swift */,
+				8E7B01E223B65D3B001B9602 /* Model */,
 				8E7B01C723B3DC6F001B9602 /* Info.plist */,
-				8E7B01D023B3E386001B9602 /* ToDoItemsTest.swift */,
 			);
 			path = ToDoTests;
 			sourceTree = "<group>";
@@ -124,6 +120,26 @@
 				8E7B01D923B50AE2001B9602 /* CoreLocation.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8E7B01E123B65C78001B9602 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8E7B01D223B3E68C001B9602 /* ToDoItem.swift */,
+				8E7B01D423B503B5001B9602 /* Location.swift */,
+				8E7B01DD23B51680001B9602 /* ItemManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8E7B01E223B65D3B001B9602 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8E7B01DF23B51776001B9602 /* ItemManagerTests.swift */,
+				8E7B01D623B50804001B9602 /* LocationTests.swift */,
+				8E7B01D023B3E386001B9602 /* ToDoItemsTest.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
