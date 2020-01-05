@@ -22,6 +22,8 @@
 		8E7B01E423B65E09001B9602 /* ItemListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B01E323B65E09001B9602 /* ItemListViewControllerTests.swift */; };
 		8E7B01E623B66020001B9602 /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B01E523B66020001B9602 /* ItemListViewController.swift */; };
 		8E7B01E823B6685B001B9602 /* ItemListDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B01E723B6685B001B9602 /* ItemListDataProvider.swift */; };
+		8E7B01EA23B69334001B9602 /* ItemListDataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B01E923B69334001B9602 /* ItemListDataProviderTests.swift */; };
+		8E7B01EC23B92359001B9602 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B01EB23B92359001B9602 /* ItemCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		8E7B01E323B65E09001B9602 /* ItemListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewControllerTests.swift; sourceTree = "<group>"; };
 		8E7B01E523B66020001B9602 /* ItemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewController.swift; sourceTree = "<group>"; };
 		8E7B01E723B6685B001B9602 /* ItemListDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListDataProvider.swift; sourceTree = "<group>"; };
+		8E7B01E923B69334001B9602 /* ItemListDataProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListDataProviderTests.swift; sourceTree = "<group>"; };
+		8E7B01EB23B92359001B9602 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,7 @@
 				8E7B01AE23B3DC6C001B9602 /* AppDelegate.swift */,
 				8E7B01B023B3DC6C001B9602 /* SceneDelegate.swift */,
 				8E7B01B423B3DC6C001B9602 /* Main.storyboard */,
+				8E7B01EB23B92359001B9602 /* ItemCell.swift */,
 				8E7B01E723B6685B001B9602 /* ItemListDataProvider.swift */,
 				8E7B01B723B3DC6F001B9602 /* Assets.xcassets */,
 				8E7B01B923B3DC6F001B9602 /* LaunchScreen.storyboard */,
@@ -113,6 +118,7 @@
 		8E7B01C423B3DC6F001B9602 /* ToDoTests */ = {
 			isa = PBXGroup;
 			children = (
+				8E7B01E923B69334001B9602 /* ItemListDataProviderTests.swift */,
 				8E7B01E323B65E09001B9602 /* ItemListViewControllerTests.swift */,
 				8E7B01E223B65D3B001B9602 /* Model */,
 				8E7B01C723B3DC6F001B9602 /* Info.plist */,
@@ -249,6 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E7B01EC23B92359001B9602 /* ItemCell.swift in Sources */,
 				8E7B01E623B66020001B9602 /* ItemListViewController.swift in Sources */,
 				8E7B01E823B6685B001B9602 /* ItemListDataProvider.swift in Sources */,
 				8E7B01AF23B3DC6C001B9602 /* AppDelegate.swift in Sources */,
@@ -263,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E7B01EA23B69334001B9602 /* ItemListDataProviderTests.swift in Sources */,
 				8E7B01E023B51776001B9602 /* ItemManagerTests.swift in Sources */,
 				8E7B01D723B50804001B9602 /* LocationTests.swift in Sources */,
 				8E7B01D123B3E386001B9602 /* ToDoItemsTest.swift in Sources */,
