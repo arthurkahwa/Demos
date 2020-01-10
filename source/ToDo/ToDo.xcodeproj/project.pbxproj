@@ -28,6 +28,8 @@
 		8E7B01F023C4A4A3001B9602 /* DetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B01EF23C4A4A3001B9602 /* DetailViewControllerTests.swift */; };
 		8E7B01F223C4A63B001B9602 /* DetaiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B01F123C4A63B001B9602 /* DetaiViewController.swift */; };
 		8E7B01F423C4BB4F001B9602 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E7B01F323C4BB4F001B9602 /* MapKit.framework */; };
+		8E7B01F623C90B9F001B9602 /* InputViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B01F523C90B9F001B9602 /* InputViewControllerTests.swift */; };
+		8E7B01F823C90BF2001B9602 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B01F723C90BF2001B9602 /* InputViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,8 @@
 		8E7B01EF23C4A4A3001B9602 /* DetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerTests.swift; sourceTree = "<group>"; };
 		8E7B01F123C4A63B001B9602 /* DetaiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetaiViewController.swift; sourceTree = "<group>"; };
 		8E7B01F323C4BB4F001B9602 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		8E7B01F523C90B9F001B9602 /* InputViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewControllerTests.swift; sourceTree = "<group>"; };
+		8E7B01F723C90BF2001B9602 /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				8E7B01F123C4A63B001B9602 /* DetaiViewController.swift */,
+				8E7B01F723C90BF2001B9602 /* InputViewController.swift */,
 				8E7B01AE23B3DC6C001B9602 /* AppDelegate.swift */,
 				8E7B01B023B3DC6C001B9602 /* SceneDelegate.swift */,
 				8E7B01B423B3DC6C001B9602 /* Main.storyboard */,
@@ -128,6 +133,7 @@
 		8E7B01C423B3DC6F001B9602 /* ToDoTests */ = {
 			isa = PBXGroup;
 			children = (
+				8E7B01F523C90B9F001B9602 /* InputViewControllerTests.swift */,
 				8E7B01EF23C4A4A3001B9602 /* DetailViewControllerTests.swift */,
 				8E7B01E923B69334001B9602 /* ItemListDataProviderTests.swift */,
 				8E7B01ED23C27C0F001B9602 /* ItemCellTests.swift */,
@@ -269,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E7B01EC23B92359001B9602 /* ItemCell.swift in Sources */,
+				8E7B01F823C90BF2001B9602 /* InputViewController.swift in Sources */,
 				8E7B01E623B66020001B9602 /* ItemListViewController.swift in Sources */,
 				8E7B01E823B6685B001B9602 /* ItemListDataProvider.swift in Sources */,
 				8E7B01AF23B3DC6C001B9602 /* AppDelegate.swift in Sources */,
@@ -290,6 +297,7 @@
 				8E7B01D723B50804001B9602 /* LocationTests.swift in Sources */,
 				8E7B01F023C4A4A3001B9602 /* DetailViewControllerTests.swift in Sources */,
 				8E7B01D123B3E386001B9602 /* ToDoItemsTest.swift in Sources */,
+				8E7B01F623C90B9F001B9602 /* InputViewControllerTests.swift in Sources */,
 				8E7B01E423B65E09001B9602 /* ItemListViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
