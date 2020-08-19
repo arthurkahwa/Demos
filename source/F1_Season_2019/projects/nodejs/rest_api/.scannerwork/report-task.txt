@@ -1,6 +1,0 @@
-projectKey=test_js
-serverUrl=http://sonar.home.local
-serverVersion=7.9.1.27448
-dashboardUrl=http://sonar.home.local/dashboard?id=test_js
-ceTaskId=AWzVD2Hv2615NvIDrEqs
-ceTaskUrl=http://sonar.home.local/api/ce/task?id=AWzVD2Hv2615NvIDrEqs

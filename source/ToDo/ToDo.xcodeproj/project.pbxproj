@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E57D45123CFB8370064044F /* APIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E57D45023CFB8370064044F /* APIClientTests.swift */; };
+		8E57D45323CFB9080064044F /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E57D45223CFB9080064044F /* APIClient.swift */; };
 		8E7B01AF23B3DC6C001B9602 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B01AE23B3DC6C001B9602 /* AppDelegate.swift */; };
 		8E7B01B123B3DC6C001B9602 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B01B023B3DC6C001B9602 /* SceneDelegate.swift */; };
 		8E7B01B623B3DC6C001B9602 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E7B01B423B3DC6C001B9602 /* Main.storyboard */; };
@@ -43,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8E57D45023CFB8370064044F /* APIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientTests.swift; sourceTree = "<group>"; };
+		8E57D45223CFB9080064044F /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APIClient.swift; path = ToDo/APIClient.swift; sourceTree = "<group>"; };
 		8E7B01AB23B3DC6C001B9602 /* ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E7B01AE23B3DC6C001B9602 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E7B01B023B3DC6C001B9602 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +99,7 @@
 		8E7B01A223B3DC6C001B9602 = {
 			isa = PBXGroup;
 			children = (
+				8E57D45223CFB9080064044F /* APIClient.swift */,
 				8E7B01AD23B3DC6C001B9602 /* ToDo */,
 				8E7B01C423B3DC6F001B9602 /* ToDoTests */,
 				8E7B01AC23B3DC6C001B9602 /* Products */,
@@ -129,6 +134,7 @@
 		8E7B01C423B3DC6F001B9602 /* ToDoTests */ = {
 			isa = PBXGroup;
 			children = (
+				8E57D45023CFB8370064044F /* APIClientTests.swift */,
 				8E7B01FA23CD0D1B001B9602 /* Controller */,
 				8E7B01E223B65D3B001B9602 /* Model */,
 				8E7B01C723B3DC6F001B9602 /* Info.plist */,
@@ -295,6 +301,7 @@
 				8E7B01E623B66020001B9602 /* ItemListViewController.swift in Sources */,
 				8E7B01E823B6685B001B9602 /* ItemListDataProvider.swift in Sources */,
 				8E7B01AF23B3DC6C001B9602 /* AppDelegate.swift in Sources */,
+				8E57D45323CFB9080064044F /* APIClient.swift in Sources */,
 				8E7B01D523B503B5001B9602 /* Location.swift in Sources */,
 				8E7B01F223C4A63B001B9602 /* DetaiViewController.swift in Sources */,
 				8E7B01D323B3E68C001B9602 /* ToDoItem.swift in Sources */,
@@ -313,6 +320,7 @@
 				8E7B01D723B50804001B9602 /* LocationTests.swift in Sources */,
 				8E7B01F023C4A4A3001B9602 /* DetailViewControllerTests.swift in Sources */,
 				8E7B01D123B3E386001B9602 /* ToDoItemsTest.swift in Sources */,
+				8E57D45123CFB8370064044F /* APIClientTests.swift in Sources */,
 				8E7B01F623C90B9F001B9602 /* InputViewControllerTests.swift in Sources */,
 				8E7B01E423B65E09001B9602 /* ItemListViewControllerTests.swift in Sources */,
 			);
