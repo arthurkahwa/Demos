@@ -28,5 +28,6 @@ Here we use the **MVVM** architectural paradigm.
 
 ## Pithy Sayings. 
 Translated the **fortune** bsd application into an App.
+
 BSD Fortune - http://bsdfortune.com/
 
