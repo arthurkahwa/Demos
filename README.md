@@ -22,11 +22,11 @@ It shows the basic but vital components and how to use them together
 ## Hacker News
 Here we use the **MVVM** architectural paradigm.
 
-* ***SwiftUI** master - detail UI 
+* **SwiftUI** master - detail UI 
 * **REST** service 
-* asynchronous communication using **combine**. 
+* Asynchronous communication using **combine**. 
 
 ## Pithy Sayings. 
 Translated the **fortune** bsd application into an App.
-BSD Fortune [http://bsdfortune.com/] (http://bsdfortune.com/)
+BSD Fortune - http://bsdfortune.com/
 
