@@ -21,7 +21,10 @@ It shows the basic but vital components and how to use them together
 
 ## Hacker News
 Here we use the **MVVM** architectural paradigm.
-This is show cased in a **SwiftUI** master - detail ui that is backed by a *REST** service which we consume asynchronously using **combine**. 
+
+* ***SwiftUI** master - detail UI 
+* **REST** service 
+* asynchronous communication using **combine**. 
 
 ## Pithy Sayings. 
 Translated the **fortune** bsd application into an App.
