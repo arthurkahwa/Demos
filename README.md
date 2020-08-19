@@ -4,18 +4,26 @@
 
 ## AR Planets
 #### You must run this on a real device, as it does not run on the simulator.
+That is, either an iPad or an iPhone.
 
 May have found Russell's Teapot floating around in space.
 Also shows clearly, that the sun revolves around the earth.
 
-It works best on an iPad, but will run on a phone as well.
-Start the App and take a couple of steps back until all the Planets and the Teapot are visible
+Start the App and take a couple of steps back until all the Planets and the Teapot are visible.
+
+## blockChain
+A brief implementation of a **block chain** in Swift.
+It shows the basic but vital components and how to use them together
+* Block
+* Transaction
+* Smart Contract
+* The BlockChain (Chain of Blocks)
+
+## Hacker News
+Here we use the **MVVM** architectural paradigm.
+This is show cased in a **SwiftUI** master - detail ui that is backed by a *REST** service which we consume asynchronously using **combine**. 
 
 ## Pithy Sayings. 
-Yet another fortune cookie App.
+Translated the **fortune** bsd application into an App.
+BSD Fortune [http://bsdfortune.com/] (http://bsdfortune.com/)
 
-## F1 Season 2019
-A full stack implementation of an app with Formula 1 season 2019 information
-
-## Folder structure
-See [folders.txt](./folders.txt)
