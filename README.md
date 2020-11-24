@@ -17,7 +17,7 @@ Start the App and take a couple of steps back until all the Planets and the Teap
 
 ## blockChain
 A brief implementation of a **block chain** in Swift.
-This is the technology used in istributed ledgers like Crypto Currency.
+This is the technology used in distributed ledger systems like **Crypto Currency**.
 It shows the basic but vital components and how to use them together
 * Block
 * Transaction
